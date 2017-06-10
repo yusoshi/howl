@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: howl_production
-  username: howl
+  username: root
   password: <%= ENV['HOWL_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
