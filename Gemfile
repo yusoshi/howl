@@ -21,6 +21,9 @@ gem 'haml'
 gem 'haml-rails'
 gem 'erb2haml'
 
+# ユーザー管理
+gem 'devise'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
