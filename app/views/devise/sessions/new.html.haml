@@ -6,7 +6,7 @@
       .contents__login-form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .contents__login-form__upper
-            = f.email_field :email, placeholder: 'ユーザ名', class: 'contents__login-form__upper__user-name form-control'
+            = f.text_field :name, placeholder: 'ユーザ名', class: 'contents__login-form__upper__user-name form-control'
           .contents__login-form__lower
             = f.password_field :password, autocomplete: "off", placeholder: 'パスワード', class: 'contents__login-form__lower__password form-control'
             .contents__login-form__lower__div-login-btn
