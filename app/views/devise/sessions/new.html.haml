@@ -1,17 +1,23 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.wrapper
+  .contents-wrapper
+    .contents
+      %h1{class: "contents__signin-up"}
+        ログイン・アカウント作成
+      .contents__login-form
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .contents__login-form__upper
+            = f.email_field :email, placeholder: 'ユーザ名 または メールアドレス', class: 'contents__login-form__upper__user-name-or-mail-address form-control'
+          .contents__login-form__lower
+            = f.password_field :password, autocomplete: "off", placeholder: 'パスワード', class: 'contents__login-form__lower__password form-control'
+            .contents__login-form__lower__div-login-btn
+              = f.submit "ログイン", class: 'contents__login-form__lower__div-login-btn__login-btn btn btn-primary'
+        = link_to "パスワードを忘れた場合", new_password_path(resource_name)
+      .contents__options
+        = link_to 'Twitterで新規登録/ログイン', "#", class: 'contents__options twitter btn btn-block'
+        = link_to 'Facebookで新規登録/ログイン', "#", class: 'contents__options facebook btn btn-block'
+        %p{class: 'contents__options__caution'}
+          許可なくTwiterに投稿することはありません。
+        %p{class: 'contents__options__mail-address'}
+          または
+          = link_to 'メールアドレス', '', class: 'contents__options__mail-address__link'
+          で登録する
