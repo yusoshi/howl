@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          authentication_keys: [:name]
 
-  # ユーザー登録時のバリデーション
+  # ユーザーセッションのバリデーション
   validates :name, presence: true, uniqueness: true
   validates :password, presence: true
 

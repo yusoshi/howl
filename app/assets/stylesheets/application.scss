@@ -18,6 +18,14 @@ a {
         -ms-box-sizing: border-box;
             box-sizing: border-box;
 }
+// フラッシュメッセージ
+.alert {
+  width: 100%;
+  text-align: center;
+  background-color: #f3981d;
+  color: #fff;
+  line-height: 30px;
+}
 
 // clearfix
 .clearfix {
