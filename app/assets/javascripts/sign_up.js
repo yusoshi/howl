@@ -6,18 +6,20 @@ $(function() {
     $('.contents__signin-up').remove();
     $('.contents__login-form').remove();
     $('.contents__options').remove();
+    $('.alert').remove();
 
     var upperContentRight = $('.contents');
 
-    var form = $("<form class='new_user' id='new_user' action='/users' accept-charset='UTF-8' method='post'>");
+    var form = $("<form class='new_user_sign-up' id='new_user_sign-up' action='/users' accept-charset='UTF-8' method='post'>");
+    form.append("<input type='hidden' name='authenticity_token' value=" + AUTH_TOKEN + ">");
     form.append("<input name='utf-8' type='hidden' value='✓'")
     form.append("<div class='form-group'>" + "<input placeholder='ユーザ名' class='form-control' type='text' name='user[name]' id='user_name'>");
     form.append("<div class='form-group'>" + "<input placeholder='パスワード' class='form-control' type='password' name='user[password]' id='user_password'>");
-    form.append("<div class='terms-of-service-caution'>" + "<a href=''>注意事項</a>" + "に同意の上、「注意事項を確認して登録」ボタンを押してください。");
+    form.append("<div class='terms-of-service-caution'>" + "<a href=''>注意事項</a>" + "に同意の上、「登録」ボタンを押してください。");
 
     var textRight = $("<div class='text-right'>");
     textRight.append("<div class='btn btn-link cancel' data-turbolinks='false'>キャンセル</div>");
-    textRight.append("<input type='submit' name='commit' value='利用規約に同意して登録' class='btn btn-primary'>");
+    textRight.append("<input type='submit' name='commit' value='登録' class='btn btn-primary'>");
 
     form.append(textRight);
 
@@ -29,8 +31,8 @@ $(function() {
     location.reload();
   })
 
-  // メールアドレスでのサインアップを非同期通信で行う
-  $(document).on('submit', '#new_user', function(e) {
+  // 非同期通信
+  $(document).on('submit', '#new_user-sign-up', function(e) {
     e.preventDefault();
     var name = $('#user_name').val();
     var password = $('#user_password').val();
