@@ -27,7 +27,6 @@ gem 'devise'
 # SNSユーザー認証
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-facebook'
 
 
 
