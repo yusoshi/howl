@@ -28,6 +28,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+# 環境変数保護
+gem 'dotenv'
+
 
 
 group :development, :test do
