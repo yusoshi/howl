@@ -13,8 +13,7 @@
               = f.submit "ログイン", class: 'contents__login-form__lower__div-login-btn__login-btn btn btn-primary'
         = link_to "パスワードを忘れた場合", new_password_path(resource_name)
       .contents__options
-        = link_to 'Twitterで新規登録/ログイン', "#", class: 'contents__options twitter btn btn-block'
-        = link_to 'Facebookで新規登録/ログイン', "#", class: 'contents__options facebook btn btn-block'
+        = link_to 'Twitterで新規登録/ログイン', user_twitter_omniauth_authorize_path, class: 'contents__options twitter btn btn-block'
         %p{class: 'contents__options__caution'}
           許可なくSNSに投稿することはありません。
         %p{class: 'contents__options__new'}
