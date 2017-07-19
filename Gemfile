@@ -24,6 +24,12 @@ gem 'erb2haml'
 # ユーザー管理
 gem 'devise'
 
+# SNSユーザー認証
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
