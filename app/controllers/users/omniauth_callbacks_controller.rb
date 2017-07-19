@@ -3,7 +3,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # devise :omniauthable, omniauth_providers: [:twitter]
 
   def twitter
-    callback_from :twiter
+    callback_from :twitter
   end
 
   # More info at:
@@ -30,6 +30,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def callback_from(provider)
     provider = provider.to_s
+    binding.pry
 
     @user = User.find_for_oauth(request.env['omniauth.auth'])
 
