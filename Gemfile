@@ -16,6 +16,22 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+# haml
+gem 'haml'
+gem 'haml-rails'
+gem 'erb2haml'
+
+# ユーザー管理
+gem 'devise'
+
+# SNSユーザー認証
+gem 'omniauth'
+gem 'omniauth-twitter'
+
+# 環境変数保護
+gem 'dotenv'
+gem 'dotenv-rails'
+
 
 
 group :development, :test do
@@ -35,6 +51,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry-rails'
 end
 
 group :production do
