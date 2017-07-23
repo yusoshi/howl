@@ -1,5 +1,5 @@
 $(function() {
-  // メールアドレスでサインアップできるフォームを作成
+  // ユーザー名とパスワードの入力フォーム
   $('.contents__options__new__link').on('click', function(e) {
     e.preventDefault();
 

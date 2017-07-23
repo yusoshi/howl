@@ -1,2 +1,3 @@
-%h1 Feeds#index
-%p Find me in app/views/feeds/index.html.haml
+= link_to 'サインアウト', destroy_user_session_path, method: :delete if user_signed_in?
+
+= link_to 'サインイン', user_session_path unless user_signed_in?
