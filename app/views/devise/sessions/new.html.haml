@@ -2,7 +2,7 @@
   .contents-wrapper
     .contents
       %h1{class: "contents__signin-up"}
-        ログイン・アカウント作成
+        ログイン
       .contents__login-form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .contents__login-form__upper
@@ -15,6 +15,6 @@
         = link_to 'Twitterで新規登録/ログイン', user_twitter_omniauth_authorize_path, class: 'contents__options twitter btn btn-block'
         %p{class: 'contents__options__caution'}
           許可なくSNSに投稿することはありません。
-        %p{class: 'contents__options__new'}
-          = link_to 'SNS以外で', '', class: 'contents__options__new__link'
-          登録する
+      .contents__links
+        = link_to 'アカウント作成', '/users/sign_up', class: 'contents__links__link'
+
