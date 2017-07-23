@@ -38,8 +38,7 @@ class User < ApplicationRecord
         name:       auth.info.name,
         uid:        auth.uid,
         provider:   auth.provider,
-        email:      User.dummy_email(auth),
-        password:   Devise.friendly_token[0.20]
+        password:   Devise.friendly_token[0, 20]
       )
     end
     user
@@ -47,7 +46,4 @@ class User < ApplicationRecord
 
   private
 
-  def self.dummy_email(auth)
-    "#{auth.uid}-#{auth.provider}@example.com"
-  end
 end

@@ -8,15 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def create
-    @user = User.new(create_params)
-    if @user.save
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.json { render json: @user, notice: 'ユーザーを作成しました。'}
-      end
-    else
-      flash.now[:alert] = "ユーザーの作成に失敗しました。"
-    end
+    super
   end
 
   # GET /resource/edit
