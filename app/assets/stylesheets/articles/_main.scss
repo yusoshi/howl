@@ -43,7 +43,7 @@
       font-size: 24px;
     }
   }
-  &__feeds {
+  &__articles {
     &__tabs {
       &__tab-lists {
         &__tab {
@@ -54,11 +54,11 @@
         }
       }
     }
-    &__feeds-area {
+    &__articles-area {
       border-top: solid 1px #ddd;
-      &__feed-lists {
+      &__article-lists {
         height: 74px;
-        &__feed {
+        &__article {
           padding: 5px 20px 5px 0;
           border-bottom: solid 1px #ddd;
           overflow: auto;
@@ -72,7 +72,7 @@
           }
           &__user-name {
           }
-          &__feed-title {
+          &__article-title {
             display: block;
             font-size: 16px;
             font-weight: 800;
