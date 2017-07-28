@@ -1,3 +1,33 @@
-= link_to 'サインアウト', destroy_user_session_path, method: :delete if user_signed_in?
-
-= link_to 'サインイン', user_session_path unless user_signed_in?
+.wrapper
+  %header{class: 'main-header'}
+    .main-header__title
+      %h1{class: 'main-header__title__howl'}Howl
+    .main-header__search
+      %p{class: 'main-header__search__box'}検索窓
+    %ul{class: 'main-header__lists'}
+    -if user_signed_in? then
+      %li{class: 'main-header__lists__list'}
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'main-header__lists__list__logout link'
+      %li{class: 'main-header__lists__list'}
+        = link_to 'マイページ', '#', class: 'main-header__lists__list__mypage link'
+      %li{class: 'main-header__lists__list'}
+        = link_to '投稿する', '#', class: 'main-header__lists__list__post link'
+    -else
+      %li{class: 'main-header__lists__list'}
+        = link_to 'アカウント作成', new_user_registration_path, class: 'main-header__lists__list__sign-up link'
+      %li{class: 'main-header__lists__list'}
+        = link_to 'ログイン', new_user_session_path, class: 'main-header__lists__list__login link normal-link'
+  .index-page-wrapper
+    .index-page-contents
+      .index-page-contents__message-box
+        %h3{class: 'index-page-contents__message-box__message'}ユーザーの名前いれたい。時候に合わせた挨拶は？
+      .index-page-contents__feeds
+        .index-page-contents__feeds__tabs
+          %ul{class: 'index-page-contents__feeds__tabs__tab-lists'}
+            %li{class: 'index-page-contents__feeds__tabs__tab-lists__tab'}
+              = link_to 'フォロータグ', '#', class: 'index-page-contents__feeds__tabs__tab-lists__tab__follow-tags'
+            %li{class: 'index-page-contents__feeds__tabs__tab-lists__tab'}
+              = link_to 'すべての投稿', '#', class: 'index-page-contents__feeds__tabs__tab-lists__tab__all-feeds'
+        .index-page-contents__feeds__feeds-area.clearfix
+          %ul{class: 'index-page-contents__feeds__feeds-area__feed-lists'}
+            = render 'feeds'

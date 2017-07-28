@@ -11,6 +11,14 @@ a {
   color: #337ab7;
 }
 
+a:hover {
+  color: #191970;
+}
+
+li {
+  list-style: none;
+}
+
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -105,14 +113,21 @@ a {
   font-weight: 400;
 }
 
+// リンク関連
 
 
+// ファイルの読み込み
 //リセット
   @import "./reset";
 
 //mixinファイル
   @import './mixin';
 
+// ルート
+  @import './feeds/main';
+
 //ユーザーセッション系
-  @import "./users/session_and_registration"
+  @import "./users/session_and_registration";
+
+
 
