@@ -21,13 +21,13 @@
     .index-page-contents
       .index-page-contents__message-box
         %h3{class: 'index-page-contents__message-box__message'}ユーザーの名前いれたい。時候に合わせた挨拶は？
-      .index-page-contents__feeds
-        .index-page-contents__feeds__tabs
-          %ul{class: 'index-page-contents__feeds__tabs__tab-lists'}
-            %li{class: 'index-page-contents__feeds__tabs__tab-lists__tab'}
-              = link_to 'フォロータグ', '#', class: 'index-page-contents__feeds__tabs__tab-lists__tab__follow-tags'
-            %li{class: 'index-page-contents__feeds__tabs__tab-lists__tab'}
-              = link_to 'すべての投稿', '#', class: 'index-page-contents__feeds__tabs__tab-lists__tab__all-feeds'
-        .index-page-contents__feeds__feeds-area.clearfix
-          %ul{class: 'index-page-contents__feeds__feeds-area__feed-lists'}
-            = render 'feeds'
+      .index-page-contents__articles
+        .index-page-contents__articles__tabs
+          %ul{class: 'index-page-contents__articles__tabs__tab-lists'}
+            %li{class: 'index-page-contents__articles__tabs__tab-lists__tab'}
+              = link_to 'フォロータグ', '#', class: 'index-page-contents__articles__tabs__tab-lists__tab__follow-tags'
+            %li{class: 'index-page-contents__articles__tabs__tab-lists__tab'}
+              = link_to 'すべての投稿', '#', class: 'index-page-contents__articles__tabs__tab-lists__tab__all-articles'
+        .index-page-contents__articles__articles-area.clearfix
+          %ul{class: 'index-page-contents__articles__articles-area__article-lists'}
+            = render @articles

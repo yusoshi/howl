@@ -1,0 +1,18 @@
+%li{class: 'index-page-contents__articles__articles-area__article-lists__article'}
+  .index-page-contents__articles__articles-area__article-lists__article__left
+    = link_to 'by #{article.user}', '#', class: 'index-page-contents__articles__articles-area__article-lists__article__user-name'
+    = link_to article.title, '#', class: 'index-page-contents__articles__articles-area__article-lists__article__article-title'
+    %ul{class: 'index-page-contents__articles__articles-area__article-lists__article__tags'}
+      - article.tags.each do |tag|
+        %li{class: 'index-page-contents__articles__articles-area__article-lists__article__tags__tag'}#{tag}
+  .index-page-contents__articles__articles-area__article-lists__article__right
+    articleモデル作成後、good&comment追加
+%li{class: 'index-page-contents__articles__articles-area__article-lists__article'}
+  .index-page-contents__articles__articles-area__article-lists__article__left
+    = link_to 'by yusoshi', '#', class: 'index-page-contents__articles__articles-area__article-lists__article__user-name'
+    = link_to 'パーカスはすごい', '#', class: 'index-page-contents__articles__articles-area__article-lists__article__article-title'
+    %ul{class: 'index-page-contents__articles__articles-area__article-lists__article__tags'}
+      %li{class: 'index-page-contents__articles__articles-area__article-lists__article__tags__tag'}パーカス
+      %li{class: 'index-page-contents__articles__articles-area__article-lists__article__tags__tag'}ノリ
+  .index-page-contents__articles__articles-area__article-lists__article__right
+    articleモデル作成後、good&comment追加
