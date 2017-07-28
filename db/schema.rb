@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728093622) do
+ActiveRecord::Schema.define(version: 20170728095009) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                    null: false
@@ -18,13 +18,25 @@ ActiveRecord::Schema.define(version: 20170728093622) do
     t.integer  "user_id",                  null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["title", "user_id"], name: "index_articles_on_title_and_user_id", using: :btree
     t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
+  end
+
+  create_table "articles_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "article_id", null: false
+    t.integer  "tag_id",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id", "tag_id"], name: "index_articles_tags_on_article_id_and_tag_id", using: :btree
+    t.index ["article_id"], name: "index_articles_tags_on_article_id", using: :btree
+    t.index ["tag_id"], name: "index_articles_tags_on_tag_id", using: :btree
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
