@@ -6,6 +6,9 @@ class User < ApplicationRecord
          :omniauthable,
          authentication_keys: [:name]
 
+  # アソシエーション
+  has_many :articles
+
   # ユーザーセッションのバリデーション
   validates :name, presence: true, uniqueness: true
   validates :password, presence: true
