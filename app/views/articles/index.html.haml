@@ -20,7 +20,10 @@
   .index-page-wrapper
     .index-page-contents
       .index-page-contents__message-box
-        %h3{class: 'index-page-contents__message-box__message'}ユーザーの名前いれたい。時候に合わせた挨拶は？
+        - if user_signed_in?
+          %h3{class: 'index-page-contents__message-box__message'}ようこそ #{current_user.name} さん！
+        - else
+          %h3{class: 'index-page-contents__message-box__message'}ようこそ！
       .index-page-contents__articles
         .index-page-contents__articles__tabs
           %ul{class: 'index-page-contents__articles__tabs__tab-lists'}
