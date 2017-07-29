@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729024220) do
+ActiveRecord::Schema.define(version: 20170729025102) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                    null: false
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20170729024220) do
     t.index ["article_id", "tag_id"], name: "index_articles_tags_on_article_id_and_tag_id", using: :btree
     t.index ["article_id"], name: "index_articles_tags_on_article_id", using: :btree
     t.index ["tag_id"], name: "index_articles_tags_on_tag_id", using: :btree
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",       limit: 65535, null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "article_id",               null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["article_id"], name: "index_comments_on_article_id", using: :btree
+    t.index ["user_id", "article_id"], name: "index_comments_on_user_id_and_article_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -69,6 +80,8 @@ ActiveRecord::Schema.define(version: 20170729024220) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "comments", "articles"
+  add_foreign_key "comments", "users"
   add_foreign_key "goods", "articles"
   add_foreign_key "goods", "users"
 end

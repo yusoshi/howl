@@ -9,6 +9,7 @@ class User < ApplicationRecord
   # アソシエーション
   has_many :articles
   has_many :goods
+  has_many :comments
 
   # ユーザーセッションのバリデーション
   validates :name, presence: true, uniqueness: true
