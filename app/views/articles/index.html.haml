@@ -27,10 +27,6 @@
       .index-page-contents__articles
         .index-page-contents__articles__tabs
           %ul{class: 'index-page-contents__articles__tabs__tab-lists'}
-            %li{class: 'index-page-contents__articles__tabs__tab-lists__tab'}
-              = link_to 'フォロータグ', '#', class: 'index-page-contents__articles__tabs__tab-lists__tab__follow-tags'
-            %li{class: 'index-page-contents__articles__tabs__tab-lists__tab'}
-              = link_to 'すべての投稿', '#', class: 'index-page-contents__articles__tabs__tab-lists__tab__all-articles'
         .index-page-contents__articles__articles-area.clearfix
           %ul{class: 'index-page-contents__articles__articles-area__article-lists'}
             = render @articles

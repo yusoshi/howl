@@ -47,15 +47,18 @@
     &__tabs {
       &__tab-lists {
         &__tab {
+          font-size: 12px;
           float: left;
           padding: 5px 10px;
-          background-color: #bbb;
-          border-left: solid 1px #ddd;
+          border: solid 1px #ddd;
+          border-radius: 4px;
+        }
+        &__tab:hover {
+          background-color: #ddd;
         }
       }
     }
     &__articles-area {
-      border-top: solid 1px #ddd;
       &__article-lists {
         height: 74px;
         &__article {
@@ -95,6 +98,9 @@
             width: 30%;
             float: right;
             height: 100%;
+            padding: 14px 0;
+          }
+          &__goods {
           }
         }
       }
