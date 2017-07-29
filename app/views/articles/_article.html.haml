@@ -1,0 +1,13 @@
+%li{class: 'index-page-contents__articles__articles-area__article-lists__article'}
+  .index-page-contents__articles__articles-area__article-lists__article__left
+    = link_to article.user.name, '#', class: 'index-page-contents__articles__articles-area__article-lists__article__user-name'
+    が投稿しました。※リンク先指定
+    = link_to article.title, '#', class: 'index-page-contents__articles__articles-area__article-lists__article__article-title'
+    %ul{class: 'index-page-contents__articles__articles-area__article-lists__article__tags'}
+      - article.tags.each do |tag|
+        %li{class: 'index-page-contents__articles__articles-area__article-lists__article__tags__tag'}#{tag.name}
+  .index-page-contents__articles__articles-area__article-lists__article__right
+    .index-page-contents__articles__articles-area__article-lists__article__goods
+      %p{class: 'index-page-contents__articles__articles-area__article-lists__article__goods__field'}いいね #{article.goods.count} 件
+    .index-page-contents__articles__articles-area__article-lists__article__comments
+      %p{class: 'index-page-contents__articles__articles-area__article-lists__article__comments__field'}コメント #{article.comments.count} 件

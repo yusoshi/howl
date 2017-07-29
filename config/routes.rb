@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-  root 'feeds#index'
+
+  root 'articles#index'
+  resources :articles, only: [:index]
 end
