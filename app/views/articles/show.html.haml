@@ -1,2 +1,24 @@
 .wrapper
   = render 'header'
+  .article-show-page-wrapper
+    .article-show-page-contents
+      .article-show-page-contents__article-info
+        .article-show-page-contents__article-info__title-area
+          %h3{class: 'article-show-page-contents__article-info__title-area__title'}#{@article.title}
+        %ul{class: 'article-show-page-contents__article-info__tag-lists'}
+          - @article.tags.each do |tag|
+            %li{class: 'article-show-page-contents__article-info__tag-lists__list'}#{tag.name}
+        .article-show-page-contents__article-info--for-row
+          .article-show-page-contents__article-info--for-row__user-name-area
+            .article-show-page-contents__article-info--for-row__user-name-area__user-name #{@article.user.name}
+          .article-show-page-contents__article-info--for-row__updated-at-area
+            .article-show-page-contents__article-info--for-row__updated-at-area__updated-at #{@article.updated_at}
+          .article-show-page-contents__article-info--for-row__engagement-area
+            .article-show-page-contents__article-info--for-row__engagement-area__goods いいね数 #{@article.goods.count}
+            .article-show-page-contents__article-info--for-row__engagement-area__comments コメント数 #{@article.comments.count}
+            .article-show-page-contents__article-info--for-row__engagement-area__goods-btn
+      .article-show-page-contents__body-area
+        %p{class: 'article-show-page-contents__body-area__body'} #{@article.body}
+      .article-show-page-contents__comments-area
+      .article-show-page-contents__user-info
+
