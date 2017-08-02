@@ -10,11 +10,11 @@
     overflow: auto;
     &__title-area {
       margin-bottom: 4px;
-      border-bottom: dotted 2px #fff;
+      border-bottom: dotted 1px #fff;
       &__title {
         margin-bottom: 2px;
-        font-size: 18px;
-        font-weight: 500;
+        font-size: 20px;
+        font-weight: 600;
         color: #fff;
       }
     }
@@ -32,7 +32,7 @@
       }
     }
     &--for-row {
-      border-top: dotted 2px #fff;
+      border-top: dotted 1px #fff;
       padding: 4px 0;
       color: #fff;
       overflow: auto;
@@ -118,7 +118,7 @@
     }
     &__lower {
       background-color: #ddd;
-      height: 80px;
+      min-height: 120px;
       padding: 6px 0 6px 6px;
     }
   }
