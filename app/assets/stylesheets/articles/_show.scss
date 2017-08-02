@@ -1,0 +1,125 @@
+.article-show-page-wrapper {
+  padding: 60px 100px 0 100px;
+}
+
+.article-show-page-contents {
+  &__article-info {
+    padding: 6px 6px 0 6px;
+    margin-top: 10px;
+    background-color: #f3981d;
+    overflow: auto;
+    &__title-area {
+      margin-bottom: 4px;
+      border-bottom: dotted 2px #fff;
+      &__title {
+        margin-bottom: 2px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+      }
+    }
+    &__tag-lists {
+      overflow: auto;
+      padding: 2px 0;
+      &__list {
+        float: left;
+        padding: 1px 4px;
+        background-color: #ddd;
+        margin-right: 8px;
+        margin-bottom: 4px;
+        border-radius: 6px;
+        font-size: 8px;
+      }
+    }
+    &--for-row {
+      border-top: dotted 2px #fff;
+      padding: 4px 0;
+      color: #fff;
+      overflow: auto;
+      height: 62px;
+
+      &__user-name-area {
+        float: left;
+        width: 33.3333%;
+        height: 100%;
+        &__user-name {
+          color: #fff;
+        }
+      }
+      &__updated-at-area {
+        float: left;
+        width: 33.3333%;
+        &__updated-at {
+        }
+      }
+      &__engagement-area {
+        float: left;
+        width: 33.3333%;
+        &__goods {
+          float: left;
+          width: 50%;
+          margin-bottom: 4px;
+        }
+        &__comments {
+          float: left;
+          width: 50%;
+        }
+        &__goods-btn-area {
+          text-align: center;
+          background-color: #fff;
+          padding: 4px 0;
+          &__goods-btn {
+            display: block;
+            color: #f3981d;
+          }
+        }
+      }
+    }
+  }
+  &__body-area {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 80px;
+    border-bottom: solid 1px #ddd;
+    line-height: 170%;
+  }
+  &__comments-area {
+    float: left;
+    width: 60%;
+  }
+  &__user-info {
+    float: left;
+    width: 40%;
+    padding-bottom: 30px;
+    &__upper {
+      width: 100%;
+      background-color: #f3981d;
+      color: #fff;
+      overflow: auto;
+      padding: 6px 0 6px 6px;
+      &__left {
+        float: left;
+        width: 70%;
+        &__name-area {
+          &__name {
+            color: #fff;
+          }
+        }
+        &__organization-area {
+          &__organization {
+            font-size: 12px;
+          }
+        }
+      }
+      &__right {
+        float: left;
+        width: 30%;
+      }
+    }
+    &__lower {
+      background-color: #ddd;
+      height: 80px;
+      padding: 6px 0 6px 6px;
+    }
+  }
+}
