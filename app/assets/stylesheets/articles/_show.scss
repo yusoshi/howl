@@ -67,10 +67,15 @@
         &__goods-btn-area {
           text-align: center;
           background-color: #fff;
-          padding: 4px 0;
           &__goods-btn {
-            display: block;
+            width: 100%;
             color: #f3981d;
+            background-color: #fff;
+            border-style: none;
+            padding: 4px 0;
+          }
+          &__goods-btn:hover {
+            cursor: pointer;
           }
         }
       }

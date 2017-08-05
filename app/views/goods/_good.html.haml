@@ -1,0 +1,13 @@
+- if user_signed_in?
+  - if @article.good_user(current_user.id)
+    = button_to article_good_path(article_id: @article.id), method: :delete, id: "good-button", class: 'article-show-page-contents__article-info--for-row__engagement-area__goods-btn-area__goods-btn decrement' do
+      %input{type: 'hidden', name: 'good_id', value: @good.id, id: 'good_id'}
+      %span
+        いいね！済み
+  - else
+    = button_to article_goods_path(@article), id: "good-button", class: 'article-show-page-contents__article-info--for-row__engagement-area__goods-btn-area__goods-btn increment' do
+      %span
+        いいね！
+- else
+  %span
+    いいね！

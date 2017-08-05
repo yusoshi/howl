@@ -14,10 +14,16 @@
           .article-show-page-contents__article-info--for-row__updated-at-area
             .article-show-page-contents__article-info--for-row__updated-at-area__updated-at #{@article.updated_at_format}
           .article-show-page-contents__article-info--for-row__engagement-area
-            .article-show-page-contents__article-info--for-row__engagement-area__goods いいね数 #{@article.goods.count}
-            .article-show-page-contents__article-info--for-row__engagement-area__comments コメント数  #{@article.comments.count}
+            .article-show-page-contents__article-info--for-row__engagement-area__goods 
+              %span いいね数 
+              %span{id: 'goods-sum'}
+                #{@article.goods.count}
+            .article-show-page-contents__article-info--for-row__engagement-area__comments 
+              %span コメント数 
+              %span
+                #{@article.comments.count}
             .article-show-page-contents__article-info--for-row__engagement-area__goods-btn-area.clearfix
-              = link_to 'いいね※要リンク先', "#", class: 'article-show-page-contents__article-info--for-row__engagement-area__goods-btn-area__goods-btn'
+              = render 'goods/good', locals: [good: @good]
       .article-show-page-contents__body-area
         %p{class: 'article-show-page-contents__body-area__body'} 
         = simple_format(@article.body)
