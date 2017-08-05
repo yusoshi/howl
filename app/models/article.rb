@@ -14,8 +14,10 @@ class Article < ApplicationRecord
 
   # 最終更新日のフォーマットを整える
   def updated_at_format
-    raw_updated_at = self.updated_at
-    return raw_updated_at
+    raw_updated_at = self.updated_at.to_s
+    reg_exp_update_at = raw_updated_at.match(/(.\d)-(.\d)-(.\d)/)
+    updated_at = '20' + reg_exp_update_at[1] + '年' + reg_exp_update_at[2] + '月' + reg_exp_update_at[3] + '日'
+    return updated_at
   end
 
   # 該当記事にユーザーがいいねしているかどうか

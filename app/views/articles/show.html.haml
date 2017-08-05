@@ -12,7 +12,8 @@
           .article-show-page-contents__article-info--for-row__user-name-area
             = link_to @article.user.name, '#', class: 'article-show-page-contents__article-info--for-row__user-name-area__user-name'
           .article-show-page-contents__article-info--for-row__updated-at-area
-            .article-show-page-contents__article-info--for-row__updated-at-area__updated-at #{@article.updated_at_format}
+            .article-show-page-contents__article-info--for-row__updated-at-area__updated-at 
+              最終更新日 #{@article.updated_at_format}
           .article-show-page-contents__article-info--for-row__engagement-area
             .article-show-page-contents__article-info--for-row__engagement-area__goods 
               %span いいね数 
