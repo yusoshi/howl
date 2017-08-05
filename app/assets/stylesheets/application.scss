@@ -115,6 +115,40 @@ li {
 
 // リンク関連
 
+// ヘッダー
+.main-header {
+  width: 100%;
+  position: fixed;
+  border-bottom: solid 1px #888;
+  padding: 0 100px;
+  line-height: 60px;
+  background-color: #fff;
+  &__title {
+    line-height: 36px;
+    padding: 4px 20px 0 20px;
+    margin-top: 10px;
+    float: left;
+    background-color: #f3981d;
+    &__howl {
+      color: #fff;
+      font-size: 30px;
+      font-family: 'Raleway', sans-serif;
+    }
+  }
+  &__search {
+    float: left;
+  }
+  &__lists {
+    float: right;
+    width: 500px;
+    &__list {
+      float: right;
+      margin-left: 20px;
+    }
+  }
+}
+
+
 
 // ファイルの読み込み
 //リセット
@@ -123,8 +157,12 @@ li {
 //mixinファイル
   @import './mixin';
 
-// ルート
+// articles
+  // 記事一覧ページ
   @import './articles/main';
+
+  // 記事詳細ページ
+  @import './articles/show';
 
 //ユーザーセッション系
   @import "./users/session_and_registration";

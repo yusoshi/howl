@@ -1,42 +1,11 @@
-// ヘッダー
-.main-header {
-  width: 100%;
-  position: fixed;
-  border-bottom: solid 1px #888;
-  padding: 0 40px;
-  line-height: 60px;
-  &__title {
-    line-height: 40px;
-    padding: 0 20px;
-    margin-top: 10px;
-    float: left;
-    background-color: #f3981d;
-    &__howl {
-      color: #fff;
-      font-size: 30px;
-      font-family: 'Raleway', sans-serif;
-    }
-  }
-  &__search {
-    float: left;
-  }
-  &__lists {
-    float: right;
-    width: 500px;
-    &__list {
-      float: right;
-      margin-left: 20px;
-    }
-  }
-}
 
 // メインコンテンツ
 
-.index-page-wrapper {
-  padding: 60px 40px 0 40px;
+.article-index-page-wrapper {
+  padding: 60px 100px 0 100px;
 }
 
-.index-page-contents {
+.article-index-page-contents {
   &__message-box {
     padding: 10px 0;
     &__message {
@@ -99,8 +68,6 @@
             float: right;
             height: 100%;
             padding: 14px 0;
-          }
-          &__goods {
           }
         }
       }

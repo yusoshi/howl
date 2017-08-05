@@ -14,6 +14,7 @@ class User < ApplicationRecord
   # ユーザーセッションのバリデーション
   validates :name, presence: true, uniqueness: true
   validates :password, presence: true
+  validates :biography, length: { maximum: 400}
 
   #nameを利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)

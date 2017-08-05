@@ -1,0 +1,44 @@
+.wrapper
+  = render 'header'
+  .article-show-page-wrapper
+    .article-show-page-contents
+      .article-show-page-contents__article-info
+        .article-show-page-contents__article-info__title-area
+          %h3{class: 'article-show-page-contents__article-info__title-area__title'}#{@article.title}
+        %ul{class: 'article-show-page-contents__article-info__tag-lists'}
+          - @article.tags.each do |tag|
+            %li{class: 'article-show-page-contents__article-info__tag-lists__list'}#{tag.name}
+        .article-show-page-contents__article-info--for-row.clearfix
+          .article-show-page-contents__article-info--for-row__user-name-area
+            = link_to @article.user.name, '#', class: 'article-show-page-contents__article-info--for-row__user-name-area__user-name'
+          .article-show-page-contents__article-info--for-row__updated-at-area
+            .article-show-page-contents__article-info--for-row__updated-at-area__updated-at 
+              最終更新日 #{@article.updated_at_format}
+          .article-show-page-contents__article-info--for-row__engagement-area
+            .article-show-page-contents__article-info--for-row__engagement-area__goods 
+              %span いいね数 
+              %span{id: 'goods-sum'}
+                #{@article.goods.count}
+            .article-show-page-contents__article-info--for-row__engagement-area__comments 
+              %span コメント数 
+              %span
+                #{@article.comments.count}
+            .article-show-page-contents__article-info--for-row__engagement-area__goods-btn-area.clearfix
+              = render 'goods/good', locals: [good: @good]
+      .article-show-page-contents__body-area
+        %p{class: 'article-show-page-contents__body-area__body'} 
+        = simple_format(@article.body)
+      .article-show-page-contents__comments-area
+        aaa
+      .article-show-page-contents__user-info
+        .article-show-page-contents__user-info__upper
+          .article-show-page-contents__user-info__upper__left
+            .article-show-page-contents__user-info__upper__left__name-area
+              = link_to @article.user.name, '#', class: 'article-show-page-contents__user-info__upper__left__name-area__name'
+            .article-show-page-contents__user-info__upper__left__organization-area
+              %h5{class: 'article-show-page-contents__user-info__upper__left__organization-area__organization'} #{@article.user.organization}
+          .article-show-page-contents__user-info__upper__right
+            .article-show-page-contents__user-info__upper__right__goods-area いいね数 #{@article.user.goods.count} 件
+        .article-show-page-contents__user-info__lower.clearfix
+          %p{class: 'article-show-page-contents__user-info__lower__biography'} 
+            = simple_format(@article.user.biography)
